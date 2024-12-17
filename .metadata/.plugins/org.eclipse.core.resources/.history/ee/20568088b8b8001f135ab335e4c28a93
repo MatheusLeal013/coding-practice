@@ -1,0 +1,37 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+
+		Scanner sc = new Scanner(System.in);
+		
+		int count = sc.nextInt();
+		
+		String[] outputArray = new String[4];
+
+		for (int i = 0; i < count; i++) {
+			String input = sc.next();
+
+			StringBuilder output = new StringBuilder();
+
+			for (int j = 0; j < input.length(); j++) {
+				char c = input.charAt(j);
+				if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+					output.append((char) (c + 3));
+				} else {
+					output.append(input.charAt(j));
+				}
+			}
+			output.reverse();
+			for (int k = input.length() / 2; k < input.length(); k++) {
+				char c = output.charAt(k);
+				output.setCharAt(k, (char) (k - 1));
+			}
+			System.out.println(output.toString());
+		}
+		
+	}
+
+}

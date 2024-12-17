@@ -1,0 +1,27 @@
+import java.io.IOException;
+import java.util.Scanner;
+ 
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+ 
+        Scanner sc = new Scanner(System.in);
+ 
+        // int count = sc.nextInt();
+        
+        String input = "Texto #3";
+                
+        for (int i = 0; i < input.length(); i++) {
+        	char c = input.charAt(i);
+        	StringBuilder output = new StringBuilder();
+        	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+        		output.append((char) (c + 3));
+        	} else {
+        		output.append(input.charAt(i));
+        		output.reverse();
+        	}
+        	System.out.print(output);
+        }
+    }
+ 
+}
