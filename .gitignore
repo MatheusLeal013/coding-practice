@@ -22,6 +22,7 @@ out/
 *.swp
 
 # C/C++ object files
+output/
 *.o
 *.obj
 *.so
